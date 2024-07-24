@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import NewTodoForm from './NewTodoForm';
+import { v4 as uuid } from 'uuid';
 
 function TodoList(){
   const [todo, setTodo] = useState([]);
@@ -23,7 +24,7 @@ function TodoList(){
 
   const todoComponents = todo.map(todo => (
     <Todo
-        key = {todo.id}
+        key = {uuid()}
         id= {todo.id}
         task= {todo.task}
         handleRemove = {remove}
